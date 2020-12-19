@@ -20,6 +20,7 @@ Imports:
   ggplot2,
   magrittr,
   rlang,
+  qpdf,
   tidyverse
 Suggests: 
     knitr,

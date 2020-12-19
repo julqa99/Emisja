@@ -20,6 +20,7 @@
 #' @import ggplot2
 #' @import magrittr
 #' @import tidyverse
+#' @import qpdf
 NULL
 
 utils::globalVariables(c("input", "wskazniki", "emisja_wynik"))
