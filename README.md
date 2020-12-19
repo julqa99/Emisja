@@ -23,7 +23,7 @@ obliczanie emisji na podstawie dostarczonyc danych, - wykres\_emisja()
 if (!require(devtools)) {install.packages("devtools"); require(devtools)}
 
 # Pobranie i instalacja pakietu:
-devtools::install_github("https://github.com/julqa99/Emisja",force=T,build_vignettes = T))
+devtools::install_github("https://github.com/julqa99/Emisja",force=T,build_vignettes = T)
 library(Emisja)
 ```
 
@@ -50,4 +50,4 @@ browseVignettes("Emisja")
 ?Emisja
 ```
 
-Szczegółowy opis można znaleźć: <https://github.com/julqa99/Emisja>
+Szczegółowy opis można znaleźć: <https://rpubs.com/szewczyk/706045>
