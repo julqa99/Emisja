@@ -1,0 +1,165 @@
+---
+title: "Emisja"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Emisja}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo = T,
+  message = F,
+  warning = F
+)
+```
+
+```{r dodatek, include=FALSE, results='hide'}
+library(Emisja)
+```
+
+
+***
+
+**Szewczyk Julia**
+Numer indeksu: 304001
+
+**AGH** Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie, Wydział Geodezji Górniczej i Inżynierii Środowiska, Katedra Kształtowania i Ochrony Środowiska.
+
+**Kierunek** Geoinformacja
+
+**Przedmiot** Inwentaryzacja Emisji, rok III
+
+**e-mail:** *[jszewczyk@student.agh.edu.pl](jszewczyk@student.agh.edu.pl)*.
+
+***
+# Wstęp
+***
+
+Pakiet powstal w ramach cwiczen projektowych z przedmiotu Metody Inwentaryzacji i Szacowania Emisji. Prowadzcy: dr Mateusz Reszutek.
+
+Pakiet powstal na bazie dokumentu/raportu "EMEP/EEA air polutanat emission inventory guidbook 2019" autorstwa EEA - Eureopean Enviromental Agency.
+
+Pakiet służy do obliczania emisji zanieczyszczeń emitowanych przez pojazd i wizualizacji tych danych. Funkcje pakietu korzystają z danych dołączonych do pakietu.   
+Dane w pliku 'wskazniki' sa przetworzonymi danymi pochodzacymi z surowego pliku z danymi:  `1.A.3.b.i-iv Road Transport Appendix 4 Emission Factors 2019.xlsx`, dostarczonego do raportu. Plik nie znajduje się w pakiecie. Został on przetworzony, a nastepnie zapisany do obiektu danych `wskazniki`. Dodatkowo pakiet wykorzystuje obiekt `input` który zawiera dane o natężeniu ruchu.  
+
+***
+# Instalacja pakietu
+***
+
+Repozytorium pakietu znajduje się na portalu [github](https://github.com/julqa99).
+Do jego pobrania i instalacji potrzebny jest pakiet `devtools`.
+
+```{r setup, eval=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# pakiet devtools
+if(!require(devtools)) {install.packages("devtools"); require(devtools)}
+# instalcja pakietu Emisja
+devtools::install_github("https://github.com/julqa99/Emisja",force=T,build_vignettes = T)
+library(Emisja)
+```
+
+Ogolne informacje o pakiecie:
+
+```{r echo=TRUE,eval=FALSE}
+help(package = "Emisja")
+```
+
+Zalecane pakiety do załadaowania:
+
+```{r, results='hide'}
+library(dplyr)
+library(magrittr)
+library(qpdf)
+library(utils)
+library(rlang)
+library(stats)
+library(ggplot2)
+library(tidyverse)
+```
+
+***
+# Dane wejściowe 
+***
+
+Wraz z pakietem, w folderze 'Data' znajduja sie dane dostarczane wraz z pakietem. Wykorzystywane sa w celu pokazania dzialania funkcji.
+Oczywiscie mozliwe jest dodanie wlasnych danych.
+        
+## Wskazniki
+
+Plik zawiera dane pobrane z EEA, na bazie ktorego stworzono niniejszy pakiet.
+
+Opis danych:
+```{r echo TRUE,eval=FALSE}
+?Emisja::wskazniki
+```
+
+Podglad poczatkowych wierszy obiektu z danymi:
+```{r echo=FALSE}
+head(wskazniki)
+```
+
+W pliku znajduja sie nastepujace kolumny:
+```{r echo=FALSE}
+colnames(wskazniki)
+```
+
+## Input
+
+Obiekt 'input' zawiera dane przykladowe oraz losowe natezenie ruchu, wykorzystywane do obliczania emisji w funkcji 'obl_emisja()'. 
+
+Opis danych:
+```{r echo=TRUE,eval=FALSE}
+?Emisja::input
+```
+Podglad danych:
+```{r echo=FALSE}
+head(input)
+```
+
+Obiekt zawiera nastepujace kolumny:
+```{r echo=FALSE}
+colnames(input)
+```
+
+***
+# Funkcja fun_obl_em()
+***
+
+Funkcja 'fun_obl_em()' wyznacza emisje dla podanego obiektu z danymi, bedacego parametrem podawanym na wejsciu. Oblicza ja w sposob identyczny jak w arkuszu kalkulacyjnym dostarczonym do podrecznika, na bazie ktorego powstal niniejszy pakiet.
+
+Dokumntacja funkcji:
+```{r echo=TRUE,eval=FALSE}
+?obl_emisja()
+```
+
+W wyniku dzialania funkcji otrzymujemy obiekt z danymi:
+```{r echo=TRUE}
+obl_emisja()
+knitr::kable(emisja_wynik)
+```
+
+***
+# Funkcja fun_em_plot()
+***
+
+Wizualizowanie wynikow wykonanych z funkcji obl_emisja. 
+
+Dokumentacja funkcji:
+```{r echo=TRUE,eval=FALSE}
+?wykres_emisja()
+```
+
+Funkcja wizualizacji wynikow z domyslnymi parametrami
+```{r echo=TRUE, message=FALSE, warning=FALSE,fig.width=7,fig.height=5}
+wykres_emisja() 
+```
+
+***
+
+**Koniec**
+
+***

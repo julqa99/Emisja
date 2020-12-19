@@ -1,39 +1,59 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # Emisja
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-Pakiet stworzony w jezyku R w ramach zajec z przedmiotu Metody Inwentaryzacji i Szacowania Emisji.
+The goal of Emisja is to …
 
-Pakiet pozwala na wyznaczanie emisji pochodzacej z transportu wedlug sposobu opisanego w podreczniku wydanym przez Europejska Agensje Srodowiska - EEA. Pakiet sklada sie z dwoch funkcji: - fun_obl_em() <- obliczanie emisji na podstawie dostarczonyc danych, - fun_em_plot() <- wizualizacja danych.
+## Installation
 
-## Instalacja z winietą
+You can install the released version of Emisja from
+[CRAN](https://CRAN.R-project.org) with:
 
- {r setup, eval=FALSE}
-# Instalacja pakietu "devtools":
-if (!require(devtools)) {install.packages("devtools"); require(devtools)}
+``` r
+install.packages("Emisja")
+```
 
-# Pobranie i instalacja pakietu:
-devtools::install_github("https://github.com/julqa99/Emisja",force=T,build_vignettes = T))
+And the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("julqa99/Emisja")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+``` r
 library(Emisja)
+## basic example code
+```
 
+What is special about using `README.Rmd` instead of just `README.md`?
+You can include R chunks like so:
 
-## Podstawowe działanie
+``` r
+summary(cars)
+#>      speed           dist       
+#>  Min.   : 4.0   Min.   :  2.00  
+#>  1st Qu.:12.0   1st Qu.: 26.00  
+#>  Median :15.0   Median : 36.00  
+#>  Mean   :15.4   Mean   : 42.98  
+#>  3rd Qu.:19.0   3rd Qu.: 56.00  
+#>  Max.   :25.0   Max.   :120.00
+```
 
-Zawarte pliki z danymi w pakiecie pozwolą na uruchomienie funkcji z domyślnymi parametrami, pokazując działanie naszego pakietu:
+You’ll still need to render `README.Rmd` regularly, to keep `README.md`
+up-to-date.
 
- {r example, eval= FALSE}
-# Obliczanie emisji:
-obl_emisji()
-# Wykresy z wynikami:
-fun_em_plot()
+You can also embed plots, for example:
 
-## Praca z pakietem
+<img src="man/figures/README-pressure-1.png" width="100%" />
 
-Aby w pełni wykorzystać pakiet zaleca się przeczytać winietę oraz help
-
-{r, eval=FALSE}
-# Winieta:
-browseVignettes("Emisja")
-# Help:
-?Emisja
+In that case, don’t forget to commit and push the resulting figure
+files, so they display on GitHub\!
