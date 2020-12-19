@@ -1,0 +1,32 @@
+#' Obiekt z danymi dla funkcji fun_obl_em ()
+#'
+#' Plik zrodlowy z danymi:
+#' 1.A.3.b.i-iv Road Transport Appendix 4 Emission Factors 2019.xlsx
+#' zostal wstepnie przetworzony i zapisany do pliku wskazniki.rda
+#'
+#' @format Ramka danych zawiera:
+#' \describe{
+#'  \item{Category}{Kategoria pojazdu - Passenger Cars itd.}
+#'  \item{Fuel}{Rodzaj paliwa - Petrol itd.}
+#'  \item{Segment}{Typ pojazdow - Small itd.}
+#'  \item{Euro.Standard}{Norma dopuszczalnych emisji spalin - Euro 5 itd.}
+#'  \item{Technology}{Technologia pracy silnika - DPF itd.}
+#'  \item{Pollutant}{Rodzaj emitowanego zanieczyszczenia - CO itd.}
+#'  \item{Mode}{Tryb jazdy pojazdu - Urban Peak itd.}
+#'  \item{Alpha}{Parametr szacowania emisji - double}
+#'  \item{Beta}{Parametr szacowania emisji - double}
+#'  \item{Gamma}{Parametr szacowania emisji - double}
+#'  \item{Delta}{Parametr szacowania emisji - double}
+#'  \item{Epsilon}{Parametr szacowania emisji - double}
+#'  \item{Zita}{Parametr szacowania emisji - double}
+#'  \item{Hta}{Parametr szacowania emisji - double}
+#'  \item{Reduction}{Parametr szacowania emisji - double}
+#'  \item{Bio}{Parametr szacowania emisji - double}
+#'  \item{Procent}{Parametr szacowania emisji - double}
+#' }
+#'
+#' @examples
+#' \dontrun{
+#'  wskazniki
+#' }
+"wskazniki"

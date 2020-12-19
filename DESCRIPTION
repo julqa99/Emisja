@@ -1,15 +1,26 @@
 Package: Emisja
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Obliczanie emisji spalin oraz wizualizacja
+Version: 0.0.0.900
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Julia",
+           family = "Szewczyk",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "julia.szewczyk2018@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Pakiet oblicza emisje EMEP/EEA zanieczyszczenia powietrza wybranego rodzaju pojazdu,
+             a takze wizualizujacy za pomoca wykresu wartosci wynikowe.
+Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Imports:
+  dplyr,
+  ggplot2,
+  magrittr,
+  rlang,
+  tidyverse
+Suggests: 
+    knitr,
+    rmarkdown
