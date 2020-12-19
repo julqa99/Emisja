@@ -142,7 +142,7 @@ knitr::kable(emisja_wynik)
 ```
 
 ***
-# Funkcja fun_em_plot()
+# Funkcja wykres_emisja()
 ***
 Pokazanie wynikow wykonanych z funkcji obl_emisja.
 
