@@ -7,8 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "julia.szewczyk2018@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: Pakiet oblicza emisje EMEP/EEA zanieczyszczenia powietrza wybranego rodzaju pojazdu,
-             a takze wizualizujacy za pomoca wykresu wartosci wynikowe.
+Description: Pakiet oblicza emisje EMEP/EEA - zanieczyszczenia powietrza wybranego rodzaju pojazdu.
+             Dodatkowo jest tworzony wykres wartosci wynikowych.
 Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8

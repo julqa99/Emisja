@@ -24,10 +24,10 @@
 #'   obl_emisja()
 #' # parametry zmodyfikowane
 #'   obl_emisja(dane = input,
-#'              kategoria = "Buses",
-#'              euro = "Euro III",
+#'              kategoria = "Passenger Cars",
+#'              euro = "Euro 4",
 #'              mode = "",
-#'              substancja = "CO)
+#'              substancja = "CH4)
 #'}
 obl_emisja <- function(dane = input,
                        kategoria = "Passenger Cars",

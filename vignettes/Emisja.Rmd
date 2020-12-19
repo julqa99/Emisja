@@ -31,20 +31,22 @@ Numer indeksu: 304001
 
 **Kierunek** Geoinformacja
 
-**Przedmiot** Inwentaryzacja Emisji, rok III
+**Przedmiot** Inwentaryzacja i Szacowanie Emisji III rok.
 
 **e-mail:** *[jszewczyk@student.agh.edu.pl](jszewczyk@student.agh.edu.pl)*.
 
 ***
 # Wstęp
 ***
+Utworzony pakiet zostal stworzony na potrzebe projektu z przedmiotu Metody Inwentaryzacji i Szacowania Emisji.
+Prowadzcy: dr Mateusz Reszutek.
 
-Pakiet powstal w ramach cwiczen projektowych z przedmiotu Metody Inwentaryzacji i Szacowania Emisji. Prowadzcy: dr Mateusz Reszutek.
+Baza do stworzenia pakietu:dokument/raport- "EMEP/EEA air polutanat emission inventory guidbook 2019",  autorstwa EEA - Eureopean Enviromental Agency.
+Pakiet mozna wykorzystac do obliczenia emisji zanieczyszczen emitowanych przez pojazd i wizualizacji tych danych.
 
-Pakiet powstal na bazie dokumentu/raportu "EMEP/EEA air polutanat emission inventory guidbook 2019" autorstwa EEA - Eureopean Enviromental Agency.
+Funkcje danego pakietu korzystaja z danych dolaczonych do pakietu.  
 
-Pakiet służy do obliczania emisji zanieczyszczeń emitowanych przez pojazd i wizualizacji tych danych. Funkcje pakietu korzystają z danych dołączonych do pakietu.   
-Dane w pliku 'wskazniki' sa przetworzonymi danymi pochodzacymi z surowego pliku z danymi:  `1.A.3.b.i-iv Road Transport Appendix 4 Emission Factors 2019.xlsx`, dostarczonego do raportu. Plik nie znajduje się w pakiecie. Został on przetworzony, a nastepnie zapisany do obiektu danych `wskazniki`. Dodatkowo pakiet wykorzystuje obiekt `input` który zawiera dane o natężeniu ruchu.  
+Majac plik `1.A.3.b.i-iv Road Transport Appendix 4 Emission Factors 2019.xlsx`, stworzylismy "wskazniki".  
 
 ***
 # Instalacja pakietu
@@ -85,12 +87,11 @@ library(tidyverse)
 # Dane wejściowe 
 ***
 
-Wraz z pakietem, w folderze 'Data' znajduja sie dane dostarczane wraz z pakietem. Wykorzystywane sa w celu pokazania dzialania funkcji.
-Oczywiscie mozliwe jest dodanie wlasnych danych.
+Wraz z pakietem, w folderze 'Data' znajduja sie dane dostarczane wraz z pakietem - sa one w celu pokazania dzialania funkcji.
         
 ## Wskazniki
 
-Plik zawiera dane pobrane z EEA, na bazie ktorego stworzono niniejszy pakiet.
+Plik zawiera dane pobrane z EEA, na bazie ktorego stworzono ten pakiet.
 
 Opis danych:
 ```{r echo TRUE,eval=FALSE}
@@ -126,11 +127,9 @@ colnames(input)
 ```
 
 ***
-# Funkcja fun_obl_em()
+# Funkcja obl_emisja()
 ***
-
-Funkcja 'fun_obl_em()' wyznacza emisje dla podanego obiektu z danymi, bedacego parametrem podawanym na wejsciu. Oblicza ja w sposob identyczny jak w arkuszu kalkulacyjnym dostarczonym do podrecznika, na bazie ktorego powstal niniejszy pakiet.
-
+Pakiet ten powstal na bazie podkrecznika, dlatego funkcja "obl_emisja()", ktora wyznacza  emisje dla podanego obiektu z danymi bedacego parametrem podawanym na wejsciu swoim sposobem obliczania jest podobna do tej z podrecznika. 
 Dokumntacja funkcji:
 ```{r echo=TRUE,eval=FALSE}
 ?obl_emisja()
@@ -145,8 +144,7 @@ knitr::kable(emisja_wynik)
 ***
 # Funkcja fun_em_plot()
 ***
-
-Wizualizowanie wynikow wykonanych z funkcji obl_emisja. 
+Pokazanie wynikow wykonanych z funkcji obl_emisja.
 
 Dokumentacja funkcji:
 ```{r echo=TRUE,eval=FALSE}

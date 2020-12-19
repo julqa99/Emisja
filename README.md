@@ -7,14 +7,13 @@
 
 <!-- badges: end -->
 
-Pakiet stworzony w jezyku R w ramach zajec z przedmiotu Metody
-Inwentaryzacji i Szacowania Emisji.
-
-Pakiet pozwala na wyznaczanie emisji pochodzacej z transportu wedlug
-sposobu opisanego w podreczniku wydanym przez Europejska Agensje
-Srodowiska - EEA. Pakiet sklada sie z dwoch funkcji: - obl\_emisja() \<-
-obliczanie emisji na podstawie dostarczonyc danych, - wykres\_emisja()
-\<- wizualizacja danych.
+Projekt z przedmiotu Metody Inwentaryzacji i Szacowania Emisji, polega
+na stworzeniu pakietu. Pracowalismy w programie RStudio. Pakiet, ktory
+zostal przez nas stworzony pozwala wyznaczyc emisje pochodzaca z
+tarnsportu(podrecznik wydany przez Europejska Agensje Srodowiska - EEA.)
+Zostaly stworzone dwie funkcje, mianowicie: obl_emisja() <- obliczanie
+emisji na podstawie dostarczonyc danych, - wykres_emisja() \<-
+wizualizacja danych.
 
 ## Instalacja z winietą
 
@@ -24,13 +23,15 @@ if (!require(devtools)) {install.packages("devtools"); require(devtools)}
 
 # Pobranie i instalacja pakietu:
 devtools::install_github("https://github.com/julqa99/Emisja",force=T,build_vignettes = T)
+# ewentualnie w ramach problemu:
+devtools::install_git("https://github.com/julqa99/Emisja")
 library(Emisja)
 ```
 
 ## Podstawowe działanie
 
-Zawarte pliki z danymi w pakiecie pozwolą na uruchomienie funkcji z
-domyślnymi parametrami, pokazując działanie naszego pakietu:
+Majac pliki z naszymi danymi w pakiecie mozemy uruchomic nasze funkcje z
+domyslnymi parametrami, sprawdzimy dzialanie naszego pakietu:
 
 ``` r
 # Obliczanie emisji:
@@ -41,7 +42,8 @@ wykres_emisja()
 
 ## Praca z pakietem
 
-Aby w pełni wykorzystać pakiet zaleca się przeczytać winietę oraz help
+Winieta oraz help help - tam znajduja sie informacje w jaki sposob
+wykorzystac pakiet w pelni.
 
 ``` r
 # Winieta:

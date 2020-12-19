@@ -12,6 +12,8 @@
 #' #Wygenerowanie wykresu dla danych domyslnych
 #' wykres_emisja()
 #'}
+#'
+#'
 wykres_emisja <- function(data = emisja_wynik,
                        one_kategoria = Category,
                        one_wartosc = "Passenger Cars",
@@ -36,11 +38,10 @@ wykres_emisja <- function(data = emisja_wynik,
                           col="green")+
     theme_minimal() -> plot
 
-  wykres_gp <- plot + labs(title = "Zalezosc wartosci parametru emisji
-                                      od wybranej kategorii",
+  wykres_gp <- plot + labs(title = "Zalezosc Wartosci Parametru emisji od wybranej kategorii",
                               subtitle = "Funkcja wizualizacji pakietu",
                               x = "Wybrana kategoria",
-                              y = "Wartosc wybranego paramteru",
+                              y = "Wybrany parametr - wartosc",
                               caption = "Opracowano na podstawie danych z EEA",
                               color = "Kategoria") +
     ylim(0, 40)

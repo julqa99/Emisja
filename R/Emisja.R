@@ -6,7 +6,7 @@
 #' Pakiet zawiera dwie funkcje:
 #'
 #' \code{obl_emisja()} oblicza emisje
-#'
+#'\code{obl_emisja()} tworzy wykres
 #'
 #'
 #' @section Dane do obliczen:
